@@ -1,0 +1,16 @@
+Changes
+lib/Acme/CPANAuthors.pm
+lib/Acme/CPANAuthors/Register.pm
+lib/Acme/CPANAuthors/Utils.pm
+lib/Acme/CPANAuthors/Utils/Kwalitee.pm
+Makefile.PL
+MANIFEST			This list of files
+README
+t/00_load.t
+t/01_basic.t
+t/02_standalone.t
+t/03_extra.t
+t/04_lookfor.t
+t/99_pod.t
+t/99_podcoverage.t
+t/lib/Acme/CPANAuthors/Test.pm

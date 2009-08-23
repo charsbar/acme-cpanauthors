@@ -1,0 +1,39 @@
+Revision history for Acme-CPANAuthors
+
+0.09 2009/08/23
+  - added Arabic and German to the subordinate modules list,
+    and rearranged the list a bit.
+  - added a reason why I wrote this
+  - added a tentative workaround to t/03_extra.t. hope this works...
+
+0.08 2009/04/21
+  - added more lists to the pod
+  - added $VERSION to the ::Utils not to break installers (RT #43388)
+
+0.07 2009/02/19
+  - added 'look_for' method and its test
+  - added a list of Acme::CPANAuthors:: modules to the pod
+
+0.06 2008/11/01
+  - removed CPAN::Config dependency (RT #40560 by Slaven Rezic)
+  - try to find CPAN sources via CPANPLUS configuration too
+
+0.05 2008/10/27
+  - skip extra gravatar test if CPAN.pm is not properly configured
+
+0.04 2008/07/14
+  - bumped up the version req of Parse::CPAN::Authors to 2.27
+  - try harder to find 01mailrc file when there's a local CPAN
+    mirror in the urllist of CPAN::Config
+
+0.03 2008/05/30
+  - "What's actually broken is Parse::CPAN::Authors 2.26" release
+  - tentatively skip a test if Parse::CPAN::Authors 2.26 is loaded.
+
+0.02 2008/05/22
+  - "YAPC::Asia 2008 hackathon" release
+  - made Acme::CPANAuthors::(Specific)->authors context sensitive.
+  - better cpan config loading
+
+0.01 2007/12/26
+  - ported from former Acme::JapaneseCPANAuthors (not released)
