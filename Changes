@@ -1,6 +1,9 @@
 Revision history for Acme-CPANAuthors
 
-0.10 to be released
+0.11 2010/09/20
+  - oops, forgot to update dependencies
+
+0.10 2010/09/20
   - use Try::Tiny for better trapping
   - added several modules to the subordinate modules list
   - launched a new api server to fetch kwalitee data as json.

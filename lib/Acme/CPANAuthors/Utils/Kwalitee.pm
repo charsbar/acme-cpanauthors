@@ -12,7 +12,7 @@ sub _uri { "http://api.cpanauthors.org/kwalitee/" . shift }
 sub _ua {
   my $class = shift;
   $ua = $_[0] if @_;
-  $ua ||= LWP::UserAgent->new;
+  $ua ||= LWP::UserAgent->new(env_proxy => 1);
   $ua;
 }
 
