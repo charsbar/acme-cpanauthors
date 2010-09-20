@@ -17,6 +17,7 @@ WriteMakefile(
     'Parse::CPAN::Packages'  => '2.27',
     'Test::More'             => '0.47',
     'Test::UseAllModules'    => '0.09',
+    'Try::Tiny'              => 0,
     'URI'                    => 0,
     'Web::Scraper'           => '0.21',
   },
