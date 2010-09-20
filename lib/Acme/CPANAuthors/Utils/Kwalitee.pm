@@ -2,50 +2,34 @@ package Acme::CPANAuthors::Utils::Kwalitee;
 
 use strict;
 use warnings;
-use Web::Scraper;
-use URI;
+use LWP::UserAgent;
+use JSON ();
 
-sub _uri { URI->new( "http://cpants.perl.org/author/" . shift ) }
+my $ua;
+
+sub _uri { "http://api.cpanauthors.org/kwalitee/" . shift }
+
+sub _ua {
+  my $class = shift;
+  $ua = $_[0] if @_;
+  $ua ||= LWP::UserAgent->new;
+  $ua;
+}
 
 sub fetch {
   my ($class, $id) = @_;
 
   return unless $id;
 
-  my $rule = scraper {
-    process 'table#info>tr' =>
-      'infos[]' => scraper { process 'td' => 'texts[]' => 'TEXT'; };
-    process 'table#grid>tr' =>
-      'grids[]' => scraper {
-        process 'td' => 'texts[]'   => 'TEXT';
-        process 'td' => 'titles[]'  => '@title';
-        process 'td' => 'classes[]' => '@class';
-      };
-  };
+  my $res = $class->_ua->get(_uri(lc $id));
+  return unless $res->is_success;
 
-  sleep 1; # intentional delay not to access too frequently
-
-  my $scraped = $rule->scrape( _uri( $id ) );
-
-  my $info;
-  foreach my $row ( @{ $scraped->{infos} } ) {
-    my ( $key, $value ) = @{ $row->{texts} };
-    $key =~ tr/ /_/;
-    $info->{$key} = $value;
+  my $json = eval { JSON::decode_json($res->content) };
+  if ($@) {
+    warn $@;
+    return;
   }
-
-  my $dist;
-  shift @{ $scraped->{grids} };  # cut off the header
-  foreach my $row ( @{ $scraped->{grids} } ) {
-    my ( $package, $kwalitee ) = @{ $row->{texts} };
-    my @titles  = grep { defined } @{ $row->{titles} };
-    my @classes = grep { defined } @{ $row->{classes} };
-
-    my %details; @details{@titles} = @classes;
-    $dist->{$package} = { kwalitee => $kwalitee, details => \%details };
-  }
-
-  return { info => $info, distributions => $dist };
+  return $json;
 }
 
 1;

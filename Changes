@@ -3,6 +3,8 @@ Revision history for Acme-CPANAuthors
 0.10 to be released
   - use Try::Tiny for better trapping
   - added several modules to the subordinate modules list
+  - launched a new api server to fetch kwalitee data as json.
+    no need to scrape kwalitee pages anymore
 
 0.09 2009/08/23
   - added Arabic and German to the subordinate modules list,
