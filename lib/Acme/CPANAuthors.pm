@@ -205,7 +205,7 @@ to start other games, like offering more useful statistics online.
 creates an object and loads the subclasses you specified.
 If you don't specify any subclasses, it tries to load all
 the subclasses found just under the "Acme::CPANAuthors"
-namespace.
+namespace (except L<Acme::CPANAuthors::Not>).
 
 =head2 count
 
