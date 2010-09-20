@@ -64,7 +64,7 @@ sub _cpan_file {
       $file = _catfile( $source_dir, $basename );
     }
   }
-  return $file if -f $file;
+  return $file if $file && -f $file;
 
   # see if CPANPLUS is configured
   eval { require CPANPLUS::Configure };
@@ -80,7 +80,7 @@ sub _cpan_file {
     }
   }
 
-  croak "$file not found; You might want to configure CPAN first." unless -f $file;
+  croak "$file not found; You might want to configure CPAN first." unless $file && -f $file;
 
   return $file;
 }
