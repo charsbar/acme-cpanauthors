@@ -268,17 +268,23 @@ including:
 
 =item L<Acme::CPANAuthors::Chinese>
 
+=item L<Acme::CPANAuthors::Dutch>
+
 =item L<Acme::CPANAuthors::French>
 
 =item L<Acme::CPANAuthors::German>
 
 =item L<Acme::CPANAuthors::Icelandic>
 
+=item L<Acme::CPANAuthors::Indonesian>
+
 =item L<Acme::CPANAuthors::Israeli>
 
 =item L<Acme::CPANAuthors::Italian>
 
 =item L<Acme::CPANAuthors::Japanese>
+
+=item L<Acme::CPANAuthors::Korean>
 
 =item L<Acme::CPANAuthors::Norwegian>
 
@@ -297,6 +303,10 @@ including:
 These are not regional ones but for some local groups.
 
 =over 4
+
+=item L<Acme::CPANAuthors::Booking>
+
+=item L<Acme::CPANAuthors::British::Companies>
 
 =item L<Acme::CPANAuthors::CodeRepos>
 
@@ -320,9 +330,15 @@ And other stuff.
 
 =over 4
 
+=item L<Acme::CPANAuthors::CPANTS::FiveOrMore>
+
+=item L<Acme::CPANAuthors::Female>
+
 =item L<Acme::CPANAuthors::Misanthrope>
 
 =item L<Acme::CPANAuthors::Not>
+
+=item L<Acme::CPANAuthors::Pumpkings>
 
 =item L<Acme::CPANAuthors::You::re_using>
 
@@ -336,7 +352,7 @@ Kenichi Ishigaki, E<lt>ishigaki at cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2007-2009 by Kenichi Ishigaki.
+Copyright (C) 2007-2010 by Kenichi Ishigaki.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
