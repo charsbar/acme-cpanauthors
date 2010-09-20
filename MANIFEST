@@ -11,6 +11,7 @@ t/01_basic.t
 t/02_standalone.t
 t/03_extra.t
 t/04_lookfor.t
+t/05_kwalitee.t
 t/99_pod.t
 t/99_podcoverage.t
 t/lib/Acme/CPANAuthors/Test.pm
