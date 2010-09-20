@@ -189,7 +189,7 @@ information on us.
 
 We've been holding a Kwalitee competition for Japanese CPAN Authors
 since 2006. Though Japanese names are rather easy to distinguish
-from westerner's names (as our names have lots of vowels), it's
+from Westerner's names (as our names have lots of vowels), it's
 tedious to look for Japanese authors every time we hold the contest.
 That's why I wrote this module and started maintaining the Japanese
 authors list with a script to look for candidates whose name looks
