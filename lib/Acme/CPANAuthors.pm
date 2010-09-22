@@ -322,6 +322,8 @@ These are lists for specific module authors.
 
 =item L<Acme::CPANAuthors::POE>
 
+=item L<Acme::CPANAuthors::ToBeLike>
+
 =item L<Acme::CPANAuthors::Acme::CPANAuthors::Authors>
 
 =back
