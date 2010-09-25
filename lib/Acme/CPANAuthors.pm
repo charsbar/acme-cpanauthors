@@ -5,7 +5,7 @@ use warnings;
 use Carp;
 use Acme::CPANAuthors::Utils qw( cpan_authors cpan_packages );
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 sub new {
   my ($class, @categories) = @_;
