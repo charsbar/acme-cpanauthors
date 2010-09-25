@@ -2,7 +2,10 @@ Changes
 lib/Acme/CPANAuthors.pm
 lib/Acme/CPANAuthors/Register.pm
 lib/Acme/CPANAuthors/Utils.pm
+lib/Acme/CPANAuthors/Utils/Authors.pm
+lib/Acme/CPANAuthors/Utils/CPANIndex.pm
 lib/Acme/CPANAuthors/Utils/Kwalitee.pm
+lib/Acme/CPANAuthors/Utils/Packages.pm
 Makefile.PL
 MANIFEST			This list of files
 README
@@ -12,6 +15,12 @@ t/02_standalone.t
 t/03_extra.t
 t/04_lookfor.t
 t/05_kwalitee.t
+t/06_parse_mailrc.t
+t/07_parse_packages.t
 t/99_pod.t
 t/99_podcoverage.t
+t/data/01mailrc.txt
+t/data/01mailrc.txt.gz
+t/data/02packages.details.txt
+t/data/02packages.details.txt.gz
 t/lib/Acme/CPANAuthors/Test.pm
