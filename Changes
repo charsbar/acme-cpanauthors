@@ -1,5 +1,8 @@
 Revision history for Acme-CPANAuthors
 
+0.13 2010/09/26
+  - forgot to remove Parse::CPAN::* bit in a test
+
 0.12 2010/09/25
   - added ToBeLike to the list.
   - bundled Parse::CPAN::* alternatives to cut off antlers.
