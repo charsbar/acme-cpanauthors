@@ -6,7 +6,7 @@ use Carp;
 use base qw( Exporter );
 use File::Spec;
 
-our $VERSION   = '0.13'; # see RT #43388
+our $VERSION   = '0.14'; # see RT #43388
 our @EXPORT_OK = qw( cpan_authors cpan_packages );
 
 my $CPANFiles = {};
@@ -43,70 +43,26 @@ sub _cpan_file {
   my ($dir, $basename) = @_;
 
   my $file;
-
-  # see if CPAN is configured
-  _require_myconfig_or_config();
-  if ( $CPAN::Config && ref $CPAN::Config eq 'HASH' ) {
-    my $source_dir = $CPAN::Config->{keep_source_where};
-    $file = _catfile( $source_dir, $dir, $basename );
-    unless ( -f $file ) {
-      require URI::file;
-      foreach my $url ( @{ $CPAN::Config->{urllist} || [] } ) {
-        next unless $url =~ s{^file://}{/};
-        $file = URI::file->new(join '/', $url, $dir, $basename )->file;
-        last if -f $file;
-      }
-    }
-    unless ( -f $file ) {
-      $file = _catfile( $source_dir, $dir, "$basename.bak" );
-    }
-    unless ( -f $file ) {
-      $file = _catfile( $source_dir, $basename );
-    }
+  if ($ENV{ACME_CPANAUTHORS_HOME}) {
+    $file = _catfile($ENV{ACME_CPANAUTHORS_HOME}, $dir, $basename);
+    return $file if $file && -r $file;
   }
-  return $file if $file && -f $file;
-
-  # see if CPANPLUS is configured
-  eval { require CPANPLUS::Configure };
-  unless ($@) {
-    # XXX: should also support custom-sources directory?
-    my $source_dir = CPANPLUS::Configure->new->get_conf('base');
-    my $cpanplus_file = _catfile( $source_dir, $basename );
-    if ( -f $cpanplus_file ) {
-      $file ||= $cpanplus_file;
-      if ( (stat($file))[9] < (stat($cpanplus_file))[9] ) {
-        $file = $cpanplus_file;
-      }
+  require File::Path;
+  for my $parent (File::Spec->tmpdir, '.') {
+    my $tmpdir = File::Spec->catdir($parent, '.acmecpanauthors', $dir);
+    eval { File::Path::mkpath($tmpdir) };
+    next unless -d $tmpdir && -r _;
+    $file = _catfile($tmpdir, $basename);
+    my $how_old = -M $file;
+    if (!-r $file or !$how_old or $how_old > 1) {
+      require LWP::UserAgent;
+      my $ua = LWP::UserAgent->new(env_proxy => 1);
+      my $res = $ua->mirror('http://www.cpan.org/'.$dir.'/'.$basename, $file);
+      next if $res->is_error;
     }
+    return $file if -r $file;
   }
-
-  croak "$file not found; You might want to configure CPAN first." unless $file && -f $file;
-
-  return $file;
-}
-
-sub _require_myconfig_or_config () { # from CPAN::HandleConfig
-  return if $INC{'CPAN/MyConfig.pm'};
-  local @INC = @INC;
-
-  eval {
-    require File::HomeDir;
-    die unless $File::HomeDir::VERSION >= 0.52;
-  };
-  my $home = $@ ? $ENV{HOME} : File::HomeDir->my_data;
-
-  unshift @INC, File::Spec->catdir($home, '.cpan');
-
-  eval { require CPAN::MyConfig };
-  if ( $@ and $@ !~ m{Can't locate CPAN/MyConfig\.pm} ) {
-    croak "CPAN::MyConfig error: $@";
-  }
-  unless ( $INC{'CPAN/MyConfig.pm'} ) {
-    eval { require CPAN::Config };
-    if ( $@ and $@ !~ m{Can't locate CPAN/Config\.pm} ) {
-      croak "CPAN::Config error: $@";
-    }
-  }
+  croak "$basename not found";
 }
 
 sub _catfile { File::Spec->canonpath( File::Spec->catfile( @_ ) ); }

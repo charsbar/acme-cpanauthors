@@ -1,5 +1,11 @@
 Revision history for Acme-CPANAuthors
 
+0.14 2010/09/30
+  - stopped trying hard to find cpan mirror in the hard drive,
+    and try downloading index files if necessary.
+    Set ACME_CPANAUTHORS_HOME environmental variable to use local
+    indices.
+
 0.13 2010/09/26
   - forgot to remove Parse::CPAN::* bit in a test
 

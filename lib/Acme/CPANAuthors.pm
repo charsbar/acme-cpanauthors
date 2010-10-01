@@ -5,7 +5,7 @@ use warnings;
 use Carp;
 use Acme::CPANAuthors::Utils qw( cpan_authors cpan_packages );
 
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 sub new {
   my ($class, @categories) = @_;
@@ -197,6 +197,18 @@ like Japanese by the help of L<Lingua::JA::Romaji::Valid> I coined.
 
 Since then, dozens of lists are uploaded on CPAN. It may be time
 to start other games, like offering more useful statistics online.
+
+=head1 ENVIRONMENTAL VARIABLE
+
+=head2 ACME_CPANAUTHORS_HOME
+
+Since 0.14, Acme::CPANAuthors checks C<ACME_CPANAUTHORS_HOME>
+environmental variable to look for a place where CPAN indices
+are located. If you have a local (mini) CPAN mirror, or a source
+directory for your CPAN clients (C<~/.cpan/sources> etc), set
+the variable to point there. If not specified, the indices will
+be downloaded from the CPAN (to your temporary directory, or
+to the current directory).
 
 =head1 METHODS
 

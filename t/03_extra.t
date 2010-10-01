@@ -1,18 +1,12 @@
 use strict;
 use warnings;
 use lib 't/lib';
-use Test::More;
+use Test::More 'no_plan';
 use Acme::CPANAuthors;
-use Try::Tiny;
 
-BEGIN {
-  try   { Acme::CPANAuthors::Utils::_cpan_authors_file() }
-  catch { plan skip_all => $_; exit };
-}
+local $ENV{ACME_CPANAUTHORS_HOME} = 't/data';
 
-plan 'no_plan';
+my $authors = Acme::CPANAuthors->new('TestExtra');
 
-my $authors = Acme::CPANAuthors->new('Test');
-
-my $avatar_url = $authors->avatar_url('ISHIGAKI');
+my $avatar_url = $authors->avatar_url('AADLER');
 ok $avatar_url;

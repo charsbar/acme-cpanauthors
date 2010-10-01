@@ -8,8 +8,8 @@ use warnings;
 use Test::More tests => 23;
 use_ok('Acme::CPANAuthors::Utils::Authors');
 
-my $filename   = "t/data/01mailrc.txt";
-my $gzfilename = "t/data/01mailrc.txt.gz";
+my $filename   = "t/data/authors/01mailrc.txt";
+my $gzfilename = "t/data/authors/01mailrc.txt.gz";
 
 #my $fh = IO::Zlib->new( $gzfilename, "rb" )
 #    || die "Failed to read $filename: $!";

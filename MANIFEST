@@ -19,8 +19,9 @@ t/06_parse_mailrc.t
 t/07_parse_packages.t
 t/99_pod.t
 t/99_podcoverage.t
-t/data/01mailrc.txt
-t/data/01mailrc.txt.gz
-t/data/02packages.details.txt
-t/data/02packages.details.txt.gz
+t/data/authors/01mailrc.txt
+t/data/authors/01mailrc.txt.gz
+t/data/modules/02packages.details.txt
+t/data/modules/02packages.details.txt.gz
 t/lib/Acme/CPANAuthors/Test.pm
+t/lib/Acme/CPANAuthors/TestExtra.pm

@@ -5,7 +5,7 @@ use warnings;
 use Test::More tests => 34;
 use_ok("Acme::CPANAuthors::Utils::Packages");
 
-my $p = Acme::CPANAuthors::Utils::Packages->new("t/data/02packages.details.txt");
+my $p = Acme::CPANAuthors::Utils::Packages->new("t/data/modules/02packages.details.txt");
 isa_ok( $p, "Acme::CPANAuthors::Utils::Packages" );
 
 my @packages = sort map { $_->package } $p->packages;
@@ -85,7 +85,7 @@ is( $p->package_count(),             scalar @packages, "package count" );
 is( $p->distribution_count(),        7,                "dist count" );
 is( $p->latest_distribution_count(), 6,                "latest dist count" );
 
-#open( IN, "t/data/02packages.details.txt" );
+#open( IN, "t/data/modules/02packages.details.txt" );
 #my $details = join '', <IN>;
 #close(IN);
 
@@ -103,7 +103,7 @@ is( $p->latest_distribution_count(), 6,                "latest dist count" );
 
 # Try the interface which takes in a .gz
 
-$p = Acme::CPANAuthors::Utils::Packages->new("t/data/02packages.details.txt.gz");
+$p = Acme::CPANAuthors::Utils::Packages->new("t/data/modules/02packages.details.txt.gz");
 isa_ok( $p, "Acme::CPANAuthors::Utils::Packages" );
 
 @packages = sort map { $_->package } $p->packages;
@@ -115,7 +115,7 @@ is_deeply(
 
 # Try the interface which takes in gzipped contents - not supported
 #
-#open( IN, "t/data/02packages.details.txt.gz" );
+#open( IN, "t/data/modules/02packages.details.txt.gz" );
 #$details = join '', <IN>;
 #close(IN);
 #
