@@ -5,8 +5,8 @@ use Test::More qw(no_plan);
 use Acme::CPANAuthors;
 
 SKIP: {
-  my $kwalitee = Acme::CPANAuthors->kwalitee('ISHIGAKI');
-  unless ($kwalitee) {
+  my $kwalitee = eval { Acme::CPANAuthors->kwalitee('ISHIGAKI') };
+  if ($@) {
     skip "API server seems down; sorry for the inconvenience", 3;
   }
   ok ref $kwalitee eq 'HASH' && %$kwalitee;
