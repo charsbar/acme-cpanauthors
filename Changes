@@ -1,5 +1,9 @@
 Revision history for Acme-CPANAuthors
 
+0.15 2011/03/05
+  - tweaked end of line handling
+  - better API server error handling (RT #66394, thanks to ANDK)
+
 0.14 2010/09/30
   - stopped trying hard to find cpan mirror in the hard drive,
     and try downloading index files if necessary.
