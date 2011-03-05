@@ -24,7 +24,7 @@ sub _parse {
 
   my $done_preambles = 0;
   while (my $line = $handle->getline) {
-    chomp $line;
+    $line =~ s/\r?\n$//;
     unless ($done_preambles) {
       if ($line =~ /^\s*$/) {
         $done_preambles = 1;

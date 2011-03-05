@@ -12,7 +12,7 @@ sub _parse {
   my $handle = $self->_handle($file);
 
   while (my $line = $handle->getline) {
-    chomp $line;
+    $line =~ s/\r?\n$//;
     my ($alias, $pauseid, $long) = split ' ', $line, 3;
     $long =~ s/^"//;
     $long =~ s/"$//;
