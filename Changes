@@ -1,5 +1,9 @@
 Revision history for Acme-CPANAuthors
 
+0.16 2011/03/09
+  - listed several new modules: DualLife, GitHub, Search
+  - ignore Search while looking for authors
+
 0.15 2011/03/05
   - tweaked end of line handling
   - better API server error handling (RT #66394, thanks to ANDK)
