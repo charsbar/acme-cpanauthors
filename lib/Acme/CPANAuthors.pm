@@ -324,6 +324,8 @@ These are not regional ones but for some local groups.
 
 =item L<Acme::CPANAuthors::GeekHouse>
 
+=item L<Acme::CPANAuthors::GitHub>
+
 =back
 
 These are lists for specific module authors.
@@ -331,6 +333,8 @@ These are lists for specific module authors.
 =over 4
 
 =item L<Acme::CPANAuthors::AnyEvent>
+
+=item L<Acme::CPANAuthors::DualLife>
 
 =item L<Acme::CPANAuthors::POE>
 
@@ -353,6 +357,8 @@ And other stuff.
 =item L<Acme::CPANAuthors::Not>
 
 =item L<Acme::CPANAuthors::Pumpkings>
+
+=item L<Acme::CPANAuthors::Search> (now L<CPAN::AuthorsSearch>)
 
 =item L<Acme::CPANAuthors::You::re_using>
 
