@@ -123,7 +123,7 @@ sub look_for {
 
 sub _list_categories {
   require Module::Find;
-  return grep { $_ !~ /^(?:Register|Utils|Not)$/ }
+  return grep { $_ !~ /^(?:Register|Utils|Not|Search)$/ }
          map  { s/^Acme::CPANAuthors:://; $_ }
          Module::Find::findsubmod( 'Acme::CPANAuthors' );
 }
@@ -133,7 +133,7 @@ sub _get_authors_of {
 
   $category =~ s/^Acme::CPANAuthors:://;
 
-  return if $category =~ /^(?:Register|Utils)$/;
+  return if $category =~ /^(?:Register|Utils|Search)$/;
 
   my $package = "Acme::CPANAuthors\::$category";
   eval "require $package";
