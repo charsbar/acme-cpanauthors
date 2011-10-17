@@ -198,6 +198,13 @@ like Japanese by the help of L<Lingua::JA::Romaji::Valid> I coined.
 Since then, dozens of lists are uploaded on CPAN. It may be time
 to start other games, like offering more useful statistics online.
 
+=head1 WEBSITE
+
+Now we have a website: L<http://acme.cpanauthors.org/>. You can
+easily see who is the best kwalitee author in your community,
+or who released or updated most in the past 365 days. More statistics
+would come, and suggestions are welcome.
+ 
 =head1 ENVIRONMENTAL VARIABLE
 
 =head2 ACME_CPANAUTHORS_HOME
@@ -270,11 +277,11 @@ including:
 
 =over 4
 
-=item L<Acme::CPANAuthors::Arabic>
-
 =item L<Acme::CPANAuthors::Austrian>
 
 =item L<Acme::CPANAuthors::Brazilian>
+
+=item L<Acme::CPANAuthors::British>
 
 =item L<Acme::CPANAuthors::Canadian>
 
@@ -282,11 +289,17 @@ including:
 
 =item L<Acme::CPANAuthors::Dutch>
 
+=item L<Acme::CPANAuthors::EU>
+
+=item L<Acme::CPANAuthors::European>
+
 =item L<Acme::CPANAuthors::French>
 
 =item L<Acme::CPANAuthors::German>
 
 =item L<Acme::CPANAuthors::Icelandic>
+
+=item L<Acme::CPANAuthors::India>
 
 =item L<Acme::CPANAuthors::Indonesian>
 
@@ -303,6 +316,8 @@ including:
 =item L<Acme::CPANAuthors::Portuguese>
 
 =item L<Acme::CPANAuthors::Russian>
+
+=item L<Acme::CPANAuthors::Swedish>
 
 =item L<Acme::CPANAuthors::Taiwanese>
 
@@ -372,7 +387,7 @@ Kenichi Ishigaki, E<lt>ishigaki at cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2007-2010 by Kenichi Ishigaki.
+Copyright (C) 2007-2011 by Kenichi Ishigaki.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
