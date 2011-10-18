@@ -287,6 +287,8 @@ including:
 
 =item L<Acme::CPANAuthors::Chinese>
 
+=item L<Acme::CPANAuthors::Danish>
+
 =item L<Acme::CPANAuthors::Dutch>
 
 =item L<Acme::CPANAuthors::EU>
@@ -316,6 +318,8 @@ including:
 =item L<Acme::CPANAuthors::Portuguese>
 
 =item L<Acme::CPANAuthors::Russian>
+
+=item L<Acme::CPANAuthors::Spanish>
 
 =item L<Acme::CPANAuthors::Swedish>
 
