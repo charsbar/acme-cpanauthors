@@ -9,6 +9,7 @@ sub import {
   my $caller = caller;
   {
     no strict 'refs';
+    no warnings 'redefine';
     *{"$caller\::authors"} = sub { wantarray ? %authors : \%authors };
   }
 }
