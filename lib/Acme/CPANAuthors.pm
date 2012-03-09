@@ -285,6 +285,8 @@ including:
 
 =item L<Acme::CPANAuthors::Canadian>
 
+=item L<Acme::CPANAuthors::Catalonian>
+
 =item L<Acme::CPANAuthors::Chinese>
 
 =item L<Acme::CPANAuthors::Danish>
