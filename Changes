@@ -1,5 +1,10 @@
 Revision history for Acme-CPANAuthors
 
+0.20 2012/11/01
+  - listed new module: Czech
+  - various pod fixes
+  - Gravatar::URL is now optional
+
 0.19 2012/03/10
   - no redefine warning
   - listed new module: Catalonian
