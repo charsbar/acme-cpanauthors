@@ -13,7 +13,7 @@ WriteMakefile(
     'CPAN::DistnameInfo'     => 0,
     'Exporter'               => 0,
     'File::Spec'             => 0,
-    'Gravatar::URL'          => 0,
+#    'Gravatar::URL'          => 0,
     'IO::File'               => 0,
     'IO::Uncompress::Gunzip' => '2.008', # core in 5.10
     'JSON'                   => 0,

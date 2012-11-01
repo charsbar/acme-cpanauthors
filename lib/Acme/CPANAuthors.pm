@@ -82,7 +82,7 @@ sub avatar_url {
 
   return unless $id;
 
-  require Gravatar::URL;
+  eval {require Gravatar::URL; 1} or return;
   my $author = cpan_authors->author($id) or return;
 
   return Gravatar::URL::gravatar_url( email => $author->email, %options );
