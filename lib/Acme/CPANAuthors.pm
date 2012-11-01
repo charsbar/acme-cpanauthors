@@ -171,9 +171,9 @@ Acme::CPANAuthors - We are CPAN authors
 
     my %authors = Acme::CPANAuthors::Japanese->authors;
 
-    # note that ->author is context sensitive.
-    # however, you can't write this without dereference
-    # as "keys" checks the type (actually, the number) of args.
+    # note that ->author is context sensitive. however, you can't
+    # write this without dereference for older perls as "keys"
+    # checks the type (actually, the number) of args.
     for my $name (keys %{ Acme::CPANAuthors::Japanese->authors }) {
       print Acme::CPANAuthors::Japanese->authors->{$name}, "\n";
     }
@@ -201,10 +201,10 @@ to start other games, like offering more useful statistics online.
 =head1 WEBSITE
 
 Now we have a website: L<http://acme.cpanauthors.org/>. You can
-easily see who is the best kwalitee author in your community,
+easily see who is the most kwalitative author in your community,
 or who released or updated most in the past 365 days. More statistics
 would come, and suggestions are welcome.
- 
+
 =head1 ENVIRONMENTAL VARIABLE
 
 =head2 ACME_CPANAUTHORS_HOME
@@ -242,18 +242,20 @@ with an id, this returns the name of the author of the id.
 
 =head2 distributions, latest_distributions
 
-returns an array of Parse::CPAN::Packages::Distribution objects
-for the author of the id. See L<Parse::CPAN::Packages> for details.
+returns an array of Acme::CPANAuthors::Utils::Packages::Distribution
+objects for the author of the id. 
 
 =head2 avatar_url
 
-returns gravatar url of the id shown at search.cpan.org.
-see L<http://site.gravatar.com/site/implement> for details.
+returns gravatar url of the id shown at search.cpan.org
+(or undef if you don't have L<Gravatar::URL>).
+See L<http://site.gravatar.com/site/implement> for details.
+
 
 =head2 kwalitee
 
 returns kwalitee information for the author of the id.
-This information is scraped from http://kwalitee.perl.org/.
+This information is fetched from a remote API server.
 
 =head2 look_for
 
@@ -289,6 +291,8 @@ including:
 
 =item L<Acme::CPANAuthors::Chinese>
 
+=item L<Acme::CPANAuthors::Czech>
+
 =item L<Acme::CPANAuthors::Danish>
 
 =item L<Acme::CPANAuthors::Dutch>
@@ -308,8 +312,6 @@ including:
 =item L<Acme::CPANAuthors::Indonesian>
 
 =item L<Acme::CPANAuthors::Israeli>
-
-=item L<Acme::CPANAuthors::Italian>
 
 =item L<Acme::CPANAuthors::Japanese>
 
@@ -371,15 +373,11 @@ And other stuff.
 
 =item L<Acme::CPANAuthors::CPANTS::FiveOrMore>
 
-=item L<Acme::CPANAuthors::Female>
-
 =item L<Acme::CPANAuthors::Misanthrope>
 
 =item L<Acme::CPANAuthors::Not>
 
 =item L<Acme::CPANAuthors::Pumpkings>
-
-=item L<Acme::CPANAuthors::Search> (now L<CPAN::AuthorsSearch>)
 
 =item L<Acme::CPANAuthors::You::re_using>
 
