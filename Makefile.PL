@@ -24,6 +24,11 @@ WriteMakefile(
     'Try::Tiny'              => 0,
     'version'                => '0.74',  # core in 5.10
   },
+  META_MERGE => {
+    recommends => {
+      Gravatar::URL => 0,
+    },
+  },
   ($ExtUtils::MakeMaker::VERSION >= 6.31
     ? (LICENSE => 'perl')
     : ()

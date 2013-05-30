@@ -1,5 +1,8 @@
 Revision history for Acme-CPANAuthors
 
+  - warning is issued when trying to fetch a gravatar when Gravatar::URL is
+    not installed; Gravatar::URL added to recommended prereqs
+
 0.20 2012/11/01
   - listed new module: Czech
   - various pod fixes
