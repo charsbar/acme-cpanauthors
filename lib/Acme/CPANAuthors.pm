@@ -85,7 +85,18 @@ sub avatar_url {
   eval {require Gravatar::URL; 1} or return;
   my $author = cpan_authors->author($id) or return;
 
-  return Gravatar::URL::gravatar_url( email => $author->email, %options );
+  my $default = delete $options{default};
+  return Gravatar::URL::gravatar_url(
+    email => $author->email,
+    %options,
+    default => Gravatar::URL::gravatar_url(
+      # Fall back to the CPAN address, as used by metacpan, which will in
+      # turn fall back to a generated image.
+      email => $id . '@cpan.org',
+      %options,
+      $default ? ( default => $default ) : (),
+    ),
+  );
 }
 
 sub kwalitee {

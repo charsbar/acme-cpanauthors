@@ -1,5 +1,8 @@
 Revision history for Acme-CPANAuthors
 
+  - avatar_url falls back to <id>@cpan.org when no match is found from
+    the email address
+
 0.20 2012/11/01
   - listed new module: Czech
   - various pod fixes
