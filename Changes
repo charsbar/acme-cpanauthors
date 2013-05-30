@@ -5,6 +5,7 @@ Revision history for Acme-CPANAuthors
     the email address
   - warning is issued when trying to fetch a gravatar when Gravatar::URL is
     not installed; Gravatar::URL added to recommended prereqs
+  - id() now always assumes list context for the caller
 
 0.20 2012/11/01
   - listed new module: Czech
