@@ -1,5 +1,7 @@
 Revision history for Acme-CPANAuthors
 
+  - id() now always assumes list context for the caller
+
 0.20 2012/11/01
   - listed new module: Czech
   - various pod fixes
