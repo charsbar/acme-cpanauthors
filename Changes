@@ -3,6 +3,8 @@ Revision history for Acme-CPANAuthors
   - new author lists added
   - avatar_url falls back to <id>@cpan.org when no match is found from
     the email address
+  - warning is issued when trying to fetch a gravatar when Gravatar::URL is
+    not installed; Gravatar::URL added to recommended prereqs
 
 0.20 2012/11/01
   - listed new module: Czech

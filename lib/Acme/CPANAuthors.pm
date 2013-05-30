@@ -82,7 +82,8 @@ sub avatar_url {
 
   return unless $id;
 
-  eval {require Gravatar::URL; 1} or return;
+  eval {require Gravatar::URL; 1}
+      or warn($@), return;
   my $author = cpan_authors->author($id) or return;
 
   my $default = delete $options{default};
