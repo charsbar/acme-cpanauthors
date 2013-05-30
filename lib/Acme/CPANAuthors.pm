@@ -274,12 +274,14 @@ modules with deeper namespaces.
 
 =head1 SEE ALSO
 
-As of writing this, there're more than a dozen of lists on the CPAN,
+As of writing this, there are quite a number of lists on the CPAN,
 including:
 
 =over 4
 
 =item L<Acme::CPANAuthors::Austrian>
+
+=item L<Acme::CPANAuthors::Belarusian>
 
 =item L<Acme::CPANAuthors::Brazilian>
 
@@ -374,6 +376,8 @@ And other stuff.
 =item L<Acme::CPANAuthors::CPANTS::FiveOrMore>
 
 =item L<Acme::CPANAuthors::Misanthrope>
+
+=item L<Acme::CPANAuthors::Nonhuman>
 
 =item L<Acme::CPANAuthors::Not>
 
