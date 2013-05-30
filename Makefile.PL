@@ -28,6 +28,9 @@ WriteMakefile(
     recommends => {
       Gravatar::URL => 0,
     },
+    resources => {
+      repository  => 'https://github.com/charsbar/acme-cpanauthors',
+    },
   },
   ($ExtUtils::MakeMaker::VERSION >= 6.31
     ? (LICENSE => 'perl')
