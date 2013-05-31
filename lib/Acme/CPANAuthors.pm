@@ -29,7 +29,8 @@ sub id {
   my ($self, $id) = @_;
 
   unless ( $id ) {
-    return ()= sort keys %{ $self };
+    my @ids = sort keys %{ $self };
+    return @ids;
   }
   else {
     return $self->{$id} ? 1 : 0;
