@@ -26,7 +26,7 @@ my %params = (
   },
   META_MERGE => {
     recommends => {
-      Gravatar::URL => 0,
+      'Gravatar::URL' => 0,
     },
     resources => {
       repository  => 'https://github.com/charsbar/acme-cpanauthors',
