@@ -1,11 +1,13 @@
 Revision history for Acme-CPANAuthors
 
-  - new author lists added
+0.21 2013/05/31
+  - new author lists added (ETHER)
   - avatar_url falls back to <id>@cpan.org when no match is found from
-    the email address
+    the email address (ETHER)
   - warning is issued when trying to fetch a gravatar when Gravatar::URL is
-    not installed; Gravatar::URL added to recommended prereqs
-  - id() now always assumes list context for the caller
+    not installed; Gravatar::URL added to recommended prereqs (ETHER)
+  - id() now always assumes list context for the caller (ETHER)
+  - added repository information to metadata
 
 0.20 2012/11/01
   - listed new module: Czech
