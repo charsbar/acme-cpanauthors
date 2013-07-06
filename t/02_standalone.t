@@ -1,17 +1,17 @@
 use strict;
 use warnings;
 use lib 't/lib';
-use Test::More 'no_plan';
+use Test::More 0.88;
 use Acme::CPANAuthors::Test;
 
 my %authors = Acme::CPANAuthors::Test->authors;
 
-ok (scalar keys %authors == 1 );
+is(keys(%authors), 1, 'one author');
 
-# note that this requires parentheses
-ok (Acme::CPANAuthors::Test->authors->{ISHIGAKI} eq 'Kenichi Ishigaki');
+is(Acme::CPANAuthors::Test->authors->{ISHIGAKI}, 'Kenichi Ishigaki', 'id -> name mapping');
 
 foreach my $name ( keys %{ Acme::CPANAuthors::Test->authors } ) {
-  # and this doesn't.
-  ok $authors{$name} eq Acme::CPANAuthors::Test->authors->{$name};
+  is($authors{$name}, Acme::CPANAuthors::Test->authors->{$name}, 'all mappings');
 }
+
+done_testing;
