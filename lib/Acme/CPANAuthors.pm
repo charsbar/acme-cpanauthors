@@ -145,7 +145,7 @@ sub look_for {
 
 sub _list_categories {
   require Module::Find;
-  return grep { $_ !~ /^(?:Register|Utils|Not|Search)$/ }
+  return grep { $_ !~ /^(?:Register|Utils|Not|Search|Factory)$/ }
          map  { s/^Acme::CPANAuthors:://; $_ }
          Module::Find::findsubmod( 'Acme::CPANAuthors' );
 }
