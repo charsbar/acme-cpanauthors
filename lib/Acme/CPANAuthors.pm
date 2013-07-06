@@ -16,24 +16,28 @@ sub new {
   foreach my $category ( @categories ) {
     %authors = ( %authors, _get_authors_of($category) );
   }
-  bless \%authors, $class;
+
+  bless {
+      category => \@categories,
+      authors => \%authors,
+  }, $class;
 }
 
 sub count {
   my $self = shift;
 
-  return scalar keys %{ $self };
+  return scalar keys %{ $self->{authors} };
 }
 
 sub id {
   my ($self, $id) = @_;
 
   unless ( $id ) {
-    my @ids = sort keys %{ $self };
+    my @ids = sort keys %{ $self->{authors} };
     return @ids;
   }
   else {
-    return $self->{$id} ? 1 : 0;
+    return $self->{authors}{$id} ? 1 : 0;
   }
 }
 
@@ -41,11 +45,16 @@ sub name {
   my ($self, $id) = @_;
 
   unless ( $id ) {
-    return sort values %{ $self };
+    return sort values %{ $self->{authors} };
   }
   else {
-    return $self->{$id};
+    return $self->{authors}{$id};
   }
+}
+
+sub category {
+  my $self = shift;
+  return @{$self->{category}};
 }
 
 sub distributions {
@@ -234,10 +243,11 @@ to the current directory).
 
 =head2 new
 
-creates an object and loads the subclasses you specified.
-If you don't specify any subclasses, it tries to load all
+creates an object and loads the subclasses corresponding to the
+category/categories you specified.
+If you don't specify any categories, it tries to load all
 the subclasses found just under the "Acme::CPANAuthors"
-namespace (except L<Acme::CPANAuthors::Not>).
+namespace (except L<Acme::CPANAuthors::Not> and some other internal classes).
 
 =head2 count
 
@@ -252,6 +262,11 @@ id, this returns if there's a registered author of the id.
 
 returns all the registered authors' name by default. If called
 with an id, this returns the name of the author of the id.
+
+=head2 category
+
+returns the list of categories represented by this class (the names passed to
+C<new>).
 
 =head2 distributions, latest_distributions
 
