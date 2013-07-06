@@ -149,10 +149,12 @@ sub _get_authors_of {
   return if $category =~ /^(?:Register|Utils|Search)$/;
 
   my $package = "Acme::CPANAuthors\::$category";
-  eval "require $package";
-  if ( $@ ) {
-    carp "$category CPAN Authors are not registered yet: $@";
-    return;
+  unless ($package->can('authors')) {
+    eval "require $package";
+    if ( $@ ) {
+      carp "$category CPAN Authors are not registered yet: $@";
+      return;
+    }
   }
   $package->authors;
 }
