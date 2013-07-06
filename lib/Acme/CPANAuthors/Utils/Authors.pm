@@ -53,7 +53,7 @@ Acme::CPANAuthors::Utils::Authors
     'cpan/authors/01mailrc.txt.gz'
   );
 
-  my $author = $authors->author('Acme::CPANAuthors');
+  my $author = $authors->author('ISHIGAKI');
 
 =head1 DESCRIPTION
 
