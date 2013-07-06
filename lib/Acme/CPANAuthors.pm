@@ -294,6 +294,8 @@ including:
 
 =over 4
 
+=item L<Acme::CPANAuthors::Australian>
+
 =item L<Acme::CPANAuthors::Austrian>
 
 =item L<Acme::CPANAuthors::Belarusian>
