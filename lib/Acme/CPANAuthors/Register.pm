@@ -11,6 +11,9 @@ sub import {
     no strict 'refs';
     no warnings 'redefine';
     *{"$caller\::authors"} = sub { wantarray ? %authors : \%authors };
+
+    (my $category = $caller) =~ s/^Acme::CPANAuthors:://;
+    *{"$caller\::category"} = sub { $category };
   }
 }
 

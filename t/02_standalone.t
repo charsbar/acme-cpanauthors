@@ -14,4 +14,6 @@ foreach my $name ( keys %{ Acme::CPANAuthors::Test->authors } ) {
   is($authors{$name}, Acme::CPANAuthors::Test->authors->{$name}, 'all mappings');
 }
 
+is(Acme::CPANAuthors::Test->category, 'Test', 'category');
+
 done_testing;
