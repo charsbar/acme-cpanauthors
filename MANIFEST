@@ -1,4 +1,3 @@
-Acme-CPANAuthors-0.22.tar.gz
 Changes
 lib/Acme/CPANAuthors.pm
 lib/Acme/CPANAuthors/Factory.pm
@@ -19,8 +18,8 @@ t/04_lookfor.t
 t/05_kwalitee.t
 t/06_parse_mailrc.t
 t/07_parse_packages.t
-t/08_factory.t
 t/08_inline_package.t
+t/09_factory.t
 t/99_pod.t
 t/99_podcoverage.t
 t/data/authors/01mailrc.txt
