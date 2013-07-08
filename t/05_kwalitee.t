@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 use lib 't/lib';
-use Test::More qw(no_plan);
+use Test::More 0.88;
 use Acme::CPANAuthors;
 
 SKIP: {
@@ -13,3 +13,5 @@ SKIP: {
   ok $kwalitee->{info},          "has info";
   ok $kwalitee->{distributions}, "has distributions";
 }
+
+done_testing;

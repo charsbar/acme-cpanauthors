@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 use lib 't/lib';
-use Test::More qw(no_plan);
+use Test::More 0.88;
 use Acme::CPANAuthors;
 
 {
@@ -29,3 +29,5 @@ use Acme::CPANAuthors;
   my @found = Acme::CPANAuthors->look_for(qr/Ken/);
   ok( @found, 'found by regexp' );
 }
+
+done_testing;
