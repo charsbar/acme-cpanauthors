@@ -21,7 +21,7 @@ is(@names, 1, 'author names');
 my $name = $authors->name('ISHIGAKI');
 like($name, qr/Ishigaki/i, 'Ishigaki is a member');
 
-my @categories = $authors->category;
+my @categories = $authors->categories;
 is(@categories, 1, '1 category');
 is($categories[0], 'Test', 'category');
 
