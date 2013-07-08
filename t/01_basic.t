@@ -1,22 +1,28 @@
 use strict;
 use warnings;
 use lib 't/lib';
-use Test::More qw(no_plan);
+use Test::More 0.88;
 use Acme::CPANAuthors;
 
 my $authors = Acme::CPANAuthors->new('Test');
 
 my $count = $authors->count;
-ok $count;
+is($count, 1, 'author count');
 
 my @ids = $authors->id;
-ok scalar @ids;
+is(@ids, 1, 'author ids');
 
 my $ishigaki = $authors->id('ISHIGAKI');
-ok $ishigaki;
+ok($ishigaki, 'ISHIGAKI is a member');
 
 my @names = $authors->name;
-ok scalar @names;
+is(@names, 1, 'author names');
 
 my $name = $authors->name('ISHIGAKI');
-ok $name =~ /Ishigaki/i;
+like($name, qr/Ishigaki/i, 'Ishigaki is a member');
+
+my @categories = $authors->category;
+is(@categories, 1, '1 category');
+is($categories[0], 'Test', 'category');
+
+done_testing;
