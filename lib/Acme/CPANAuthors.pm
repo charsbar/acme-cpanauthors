@@ -18,7 +18,7 @@ sub new {
   }
 
   bless {
-      category => \@categories,
+      categories => \@categories,
       authors => \%authors,
   }, $class;
 }
@@ -52,9 +52,9 @@ sub name {
   }
 }
 
-sub category {
+sub categories {
   my $self = shift;
-  return @{$self->{category}};
+  return @{$self->{categories}};
 }
 
 sub distributions {
@@ -265,7 +265,7 @@ id, this returns if there's a registered author of the id.
 returns all the registered authors' name by default. If called
 with an id, this returns the name of the author of the id.
 
-=head2 category
+=head2 categories
 
 returns the list of categories represented by this class (the names passed to
 C<new>).

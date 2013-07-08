@@ -25,7 +25,7 @@ is(@names, 2, 'author names');
 
 like($authors->name('ISHIGAKI'), qr/Ishigaki/i, 'Ishigaki is a member');
 
-my @categories = $authors->category;
+my @categories = $authors->categories;
 is(@categories, 2, '2 categories');
 cmp_deeply(
     \@categories,

@@ -11,7 +11,7 @@ sub create {
   my %authors = map { %{ $data{$_} } } @categories;
 
   return bless {
-    category => \@categories,
+    categories => \@categories,
     authors => \%authors,
   }, 'Acme::CPANAuthors';
 }
