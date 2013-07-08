@@ -19,6 +19,7 @@ my %params = (
     'JSON'                   => 0,
     'LWP::UserAgent'         => 0,
     'Module::Find'           => 0,
+    'Test::Deep'             => 0,
     'Test::More'             => '0.88', # for done_testing
     'Test::UseAllModules'    => '0.09',
     'Try::Tiny'              => 0,
