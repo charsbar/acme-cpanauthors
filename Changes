@@ -1,5 +1,9 @@
 Revision history for Acme-CPANAuthors
 
+0.23 2013/07/08
+  - added Acme::CPANAuthors::Factory (ETHER)
+  - added categories method (ETHER) 
+
 0.22 2013/07/07
   - listed new module: Australian
   - fixed example in ::Utils (ETHER)
