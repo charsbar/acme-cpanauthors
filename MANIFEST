@@ -1,4 +1,5 @@
 Changes
+cpanfile
 lib/Acme/CPANAuthors.pm
 lib/Acme/CPANAuthors/Factory.pm
 lib/Acme/CPANAuthors/Register.pm
