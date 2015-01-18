@@ -55,10 +55,10 @@ sub _cpan_file {
     $file = _catfile($tmpdir, $basename);
     my $how_old = -M $file;
     if (!-r $file or !$how_old or $how_old > 1) {
-      require LWP::UserAgent;
-      my $ua = LWP::UserAgent->new(env_proxy => 1);
+      require HTTP::Tiny;
+      my $ua = HTTP::Tiny->new(env_proxy => 1);
       my $res = $ua->mirror('http://www.cpan.org/'.$dir.'/'.$basename, $file);
-      next if $res->is_error;
+      next unless $res->{success};
     }
     return $file if -r $file;
   }

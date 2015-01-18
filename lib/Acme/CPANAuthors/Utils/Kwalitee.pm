@@ -2,7 +2,7 @@ package Acme::CPANAuthors::Utils::Kwalitee;
 
 use strict;
 use warnings;
-use LWP::UserAgent;
+use HTTP::Tiny;
 use JSON::PP ();
 
 my $ua;
@@ -12,7 +12,7 @@ sub _uri { "http://api.cpanauthors.org/kwalitee/" . shift }
 sub _ua {
   my $class = shift;
   $ua = $_[0] if @_;
-  $ua ||= LWP::UserAgent->new(env_proxy => 1);
+  $ua ||= HTTP::Tiny->new(env_proxy => 1);
   $ua;
 }
 
@@ -22,11 +22,11 @@ sub fetch {
   return unless $id;
 
   my $res = $class->_ua->get(_uri(lc $id));
-  unless ($res->is_success && $res->code == 200) {
-    $class->_error($res->status_line);
+  unless ($res->{success} && $res->{status} == 200) {
+    $class->_error("$res->{status} $res->{reason}");
   }
 
-  my $json = eval { JSON::PP::decode_json($res->content) };
+  my $json = eval { JSON::PP::decode_json($res->{content}) };
   if ($@) {
     $class->_error($@);
   }
