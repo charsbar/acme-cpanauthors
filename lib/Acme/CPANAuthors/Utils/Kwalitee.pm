@@ -3,7 +3,7 @@ package Acme::CPANAuthors::Utils::Kwalitee;
 use strict;
 use warnings;
 use LWP::UserAgent;
-use JSON ();
+use JSON::PP ();
 
 my $ua;
 
@@ -26,7 +26,7 @@ sub fetch {
     $class->_error($res->status_line);
   }
 
-  my $json = eval { JSON::decode_json($res->content) };
+  my $json = eval { JSON::PP::decode_json($res->content) };
   if ($@) {
     $class->_error($@);
   }
