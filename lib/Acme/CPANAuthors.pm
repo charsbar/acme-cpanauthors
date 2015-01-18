@@ -128,7 +128,9 @@ sub look_for {
   }
 
   my @found;
-  foreach my $category ( _list_categories() ) {
+  my @categories = ref $self ? @{ $self->{categories} } : ();
+  @categories = _list_categories() unless @categories;
+  foreach my $category ( @categories ) {
     my %authors = _get_authors_of($category);
     while ( my ($id, $name) = each %authors ) {
       if ($id =~ /$id_or_name/ or $name =~ /$id_or_name/) {
