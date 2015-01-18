@@ -164,6 +164,8 @@ sub _get_authors_of {
       carp "$category CPAN Authors are not registered yet: $@";
       return;
     }
+    # some may actually lack 'authors' interface
+    return unless $package->can('authors');
   }
   $package->authors;
 }
