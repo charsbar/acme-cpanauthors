@@ -1,5 +1,12 @@
 Revision history for Acme-CPANAuthors
 
+0.24 2015/01/18
+  - make sure if authors method is actually availabl (RT#101597 ETHER++)
+  - switched to JSON::PP and HTTP::Tiny
+  - changed look_for method to look for registered authors if called
+    from an instance (instead of looking for all the registered authors
+    in installed packages).
+
 0.23 2013/07/08
   - added Acme::CPANAuthors::Factory (ETHER)
   - added categories method (ETHER) 
