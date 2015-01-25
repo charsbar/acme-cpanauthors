@@ -48,6 +48,12 @@ data as if you had registered a new class at compile time.
 However, you cannot call C<< Acme::CPANAuthors->new >> with your category and
 get back a new object; it still only knows about modules on disk.
 
+=head1 METHOD
+
+=head2 create
+
+takes a hash reference to create an Acme::CPANAuthors object.
+
 =head1 AUTHOR
 
 This class was written by Karen Etheridge (ether), E<lt>ether at cpan.orgE<gt>
