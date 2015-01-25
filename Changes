@@ -1,5 +1,8 @@
 Revision history for Acme-CPANAuthors
 
+0.25 2015/01/25
+  - improved pod coverage (PJACKLAM++)
+
 0.24 2015/01/18
   - make sure if authors method is actually availabl (RT#101597 ETHER++)
   - switched to JSON::PP and HTTP::Tiny
